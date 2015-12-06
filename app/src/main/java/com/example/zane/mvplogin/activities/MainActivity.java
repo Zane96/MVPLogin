@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.zane.mvplogin.activities.model.bean.User;
 import com.example.zane.mvplogin.activities.vus.LoginActivityViewImpl;
 import com.example.zane.mvplogin.activities.vus.VuLoginActivity;
 
@@ -12,7 +13,7 @@ public class MainActivity extends BasePresentActivity<LoginActivityViewImpl, VuL
     @Override
     protected void onBindVu() {
 
-
+        final User user = new User();
 
         vu.getButtonLogin().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -20,10 +21,10 @@ public class MainActivity extends BasePresentActivity<LoginActivityViewImpl, VuL
                 String userName = vu.getEditTextAccount().getText().toString();
                 String password = vu.getEditTextPassword().getText().toString();
                 Toast.makeText(MainActivity.this, userName, Toast.LENGTH_SHORT).show();
-                if(userName.equals("xz") && password.equals("123")) {
+                if(userName.equals(user.getUserName()) && password.equals(user.getPassword())) {
                     Intent intent = new Intent(MainActivity.this, LoginSuccessActivity.class);
                     intent.putExtra("username", userName);
-                    startActivity(new Intent(MainActivity.this, LoginSuccessActivity.class));
+                    startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this, "错误", Toast.LENGTH_SHORT).show();
                 }

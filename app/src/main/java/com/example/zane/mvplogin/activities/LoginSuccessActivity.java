@@ -12,11 +12,11 @@ public class LoginSuccessActivity extends BasePresentActivity<LoginSuccessActivi
 
     String userName;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        userName = getIntent().getStringExtra("username");
-    }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        userName = getIntent().getStringExtra("username");
+//    }
 
     @Override
     protected Class<LoginSuccessActivityImpl> getVuClass() {
@@ -25,7 +25,7 @@ public class LoginSuccessActivity extends BasePresentActivity<LoginSuccessActivi
 
     @Override
     protected void onBindVu() {
-        vu.setText(userName);
+        vu.setText(getIntent().getStringExtra("username"));
     }
 
     @Override
