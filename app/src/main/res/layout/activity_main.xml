@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent" android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:stretchColumns="1"
+        >
+        <TableRow android:layout_marginTop="20dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:textSize="28dp"
+                android:text="Name"/>
+            <EditText
+                android:layout_height="wrap_content"
+                android:id="@+id/account"
+                android:hint="name"
+
+                />
+        </TableRow>
+        <TableRow android:layout_marginTop="20dp">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="28dp"
+                android:text="Password"/>
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/password"
+                android:hint="password"
+
+                />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="80dp">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_clear"
+                android:textSize="10dp"
+                android:text="Clear"/>
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_login"
+                android:textSize="10dp"
+                android:text="Login"/>
+        </TableRow>
+
+
+    </TableLayout>
+
+</RelativeLayout>
